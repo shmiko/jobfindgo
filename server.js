@@ -27,6 +27,3 @@ con.once('open', function(){
 });
 
 app.listen(process.env.PORT, process.env.IP);
-
-
-
