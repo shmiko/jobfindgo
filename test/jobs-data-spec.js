@@ -2,6 +2,7 @@ var expect = require('chai').expect;
 var mongoose = require('mongoose');
 var jobModel = require('../models/Job');
 var Promise = require('bluebird');
+var jobsData = require("../jobs-data.js");
 
 function resetJobs(){
 	return new Promise(function(resolve,reject){
@@ -11,10 +12,6 @@ function resetJobs(){
 
 var connectDB = Promise.promisify(mongoose.connect, mongoose);
 
-function findJobs(query){
-	return Promise.cast(mongoose.model('Job').find(query).exec());
-}
-
 describe("get jobs", function(){
 
 	var jobs;
@@ -23,7 +20,7 @@ describe("get jobs", function(){
 		connectDB('mongodb://localhost/jobfinder')
 			.then(resetJobs)
 			.then(jobModel.seedJobs)
-			.then(findJobs)
+			.then(jobsData.findJobs)
 			.then(function(collection){
 				jobs = collection;
 				done();
