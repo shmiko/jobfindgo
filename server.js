@@ -10,14 +10,21 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/api/jobs', function(req,res){
-   res.send('test'); 
+   //res.send('test'); 
+   mongoose.model('Job').find({}).exec(function(error, collection){
+   	res.send(collection);
+   })
 });
 
 app.get('*', function(req,res){
    res.render('index'); 
 });
 
-mongoose.connect('mongodb://localhost/jobfinder');
+var MONGOHQ_URL = 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit';
+
+
+//mongoose.connect('mongodb://localhost/jobfinder');
+mongoose.connect(MONGOHQ_URL);
 
 var con = mongoose.connection;
 
