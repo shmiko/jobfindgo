@@ -26,5 +26,7 @@ con.once('open', function(){
     jobModel.seedJobs();
 });
 
-app.listen(3333);
+app.listen(process.env.PORT, process.env.IP);
+
+
 
