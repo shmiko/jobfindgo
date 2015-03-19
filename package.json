@@ -2,10 +2,10 @@
   "name": "jobfindgo",
   "version": "1.0.0",
   "description": "Job Finding App",
-  "main": "index.js",
+  "main": "server.js",
   "repository": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "keywords": [
     "Angular"
@@ -15,14 +15,15 @@
     "email": "pjones@calmapit.com",
     "url": "http://calmapit.com"
   },
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-    },
   "dependencies": {
+    "bluebird": "^2.9.14",
     "bower": "^1.3.12",
     "express": "^4.12.2",
     "jade": "^1.9.2",
+    "mocha": "^2.2.1",
     "mongoose": "^3.8.25"
+  },
+  "devDependencies": {
+    "chai": "^2.1.2"
   }
 }
