@@ -1,6 +1,7 @@
 var express = require("express");
 var mongoose = require("mongoose");
 var jobModel = require("./models/job");
+var jobsData = require("./jobs-data.js");
 
 var app = express();
 
@@ -11,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/api/jobs', function(req,res){
    //res.send('test'); 
-   mongoose.model('Job').find({}).exec(function(error, collection){
+   jobsData.findJobs().then(function(error, collection){
    	res.send(collection);
    })
 });
@@ -34,3 +35,4 @@ con.once('open', function(){
 });
 
 app.listen(process.env.PORT, process.env.IP);
+//app.listen(3000);
