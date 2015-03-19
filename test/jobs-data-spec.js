@@ -7,10 +7,6 @@ function resetJobs(){
 	return new Promise(function(resolve,reject){
 		mongoose.connection.collections['jobs'].drop(resolve,reject);
 	});
-	//mongoose.connection.collection['jobs'].drop(callback);
-	//mongoose.connection.collections['jobs'].drop( function(callback) {
-	//    console.log('collection dropped');
-	//});
 }
 
 var connectDB = Promise.promisify(mongoose.connect, mongoose);
@@ -26,15 +22,8 @@ describe("get jobs", function(){
 			.then(jobModel.seedJobs)
 			.then(findJobs)
 			.then(function(jobsList){
-				//jobModel.seedJobs(function(){
-				//mongoose.model('Job').find({}).exec(function(error,jobsList){
 				expect(jobsList.length).to.be.at.least(1);
-					//if (error) throw error; 
-					//setTimeout(done, 5000);
 				done();
-				//});
-				//});
 			});
-		//jobsList = [];
 	});
 });
