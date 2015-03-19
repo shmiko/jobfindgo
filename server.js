@@ -24,8 +24,8 @@ app.get('*', function(req,res){
 var MONGOHQ_URL = 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit';
 
 
-//mongoose.connect('mongodb://localhost/jobfinder');
-mongoose.connect(MONGOHQ_URL);
+mongoose.connect('mongodb://localhost/jobfinder');
+//mongoose.connect(MONGOHQ_URL);
 
 var con = mongoose.connection;
 
@@ -34,5 +34,5 @@ con.once('open', function(){
     jobModel.seedJobs();
 });
 
-app.listen(process.env.PORT, process.env.IP);
-//app.listen(3000);
+//app.listen(process.env.PORT, process.env.IP);
+app.listen(3333);
