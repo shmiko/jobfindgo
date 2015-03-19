@@ -1,5 +1,6 @@
 var express = require("express");
 var mongoose = require("mongoose");
+var jobModel = require("./models/job");
 
 var app = express();
 
@@ -22,7 +23,8 @@ var con = mongoose.connection;
 
 con.once('open', function(){
     console.log('connected to mongodb successfully!');
+    jobModel.seedJobs();
 });
 
-app.listen(process.env.PORT, process.env.IP);
+app.listen(3333);
 
