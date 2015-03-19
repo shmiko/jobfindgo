@@ -3,14 +3,22 @@
   "version": "1.0.0",
   "description": "Job Finding App",
   "main": "index.js",
+  "repository": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "Angular"
   ],
-  "author": "Paul Jones",
-  "license": "ISC",
+  "author": {
+    "name": "Paul Jones",
+    "email": "pjones@calmapit.com",
+    "url": "http://calmapit.com"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+    },
   "dependencies": {
     "bower": "^1.3.12",
     "express": "^4.12.2",
