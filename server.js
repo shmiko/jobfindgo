@@ -2,14 +2,14 @@ var express = require("express");
 var mongoose = require("mongoose");
 var jobModel = require("./models/job");
 var jobsData = require("./jobs-data.js");
-var http = require('http');
+//var http = require('http');
 //var httpServer = http.createServer(app);
 
 var app = express();
 
 app.set('views', __dirname);
-//app.set('view engine', 'jade');
-app.set('view engine', 'html');
+app.set('view engine', 'jade');
+//app.set('view engine', 'html');
 
 app.use(express.static(__dirname + '/public'));
 
