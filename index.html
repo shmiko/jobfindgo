@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+    <head>
+        <meta charset="utf-8">
+        <title>Find a Job Now!</title>
+        <link rel="stylesheet" href='bower_components/bootstrap/dist/css/bootstrap.css'>
+        <script src=src='bower_components/angular/angular.js'></script>
+        <script src='bower_components/angular-resource/angular-resource.js'></script>
+        <script src='bower_components/jquery/dist/jquery.js'></script>
+        <script src="/app/app.js"></script>
+    </head>
+    <body>
+        <section data-ng-controller="testCtrl">
+        <div class="col-sm-4" ng-repeat="job in jobs">
+			
+			<div class="col-xs-12">
+				<h1>{{job.title}}</h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-10 col-xs-offset-2">	
+					<span class="text-muted">{{job.desciption}}</span>			
+				</div>
+			</div>
+		</div>
+		<div ng-view class="container"></div>
+		<div class="panel-body">
+		    <div class="col-md-offset-3 col-md-3">
+		        <div>Developed by:</div>
+		        <h3>Paul Jones</h3>
+
+		        <div>pjones@calmapit.com</div>
+		        <a href="http://calmapit.com" target="_blank">CalMapIt</a><br> 
+		        <a href="http://tripscope.meteor.com" target="_blank">My Blog</a>
+		    </div>
+		    <div class="col-md-3">
+		        <div>Art work by:</div>
+		        <h3>Shmik</h3>
+		        <a href="http://shmik.com/" target="_blank">shmik.com</a>
+		    </div>
+		</div>
+    </body>
+</html>

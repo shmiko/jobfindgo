@@ -10,14 +10,14 @@ function resetJobs(){
 	});
 }
 
-var connectDB = Promise.promisify(mongoose.connect, mongoose);
+
 
 describe("get jobs", function(){
 
 	var jobs;
 
 	before(function(done){
-		connectDB('mongodb://localhost/jobfinder')
+		jobsData.connectDB('mongodb://localhost/jobfinder')
 			.then(resetJobs)
 			.then(jobModel.seedJobs)
 			.then(jobsData.findJobs)

@@ -6,7 +6,7 @@ var jobsData = require("./jobs-data.js");
 var app = express();
 
 app.set('views', __dirname);
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -24,15 +24,15 @@ app.get('*', function(req,res){
 var MONGOHQ_URL = 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit';
 
 
-mongoose.connect('mongodb://localhost/jobfinder');
+//mongoose.connect('mongodb://localhost/jobfinder');
 //mongoose.connect(MONGOHQ_URL);
 
-var con = mongoose.connection;
-
-con.once('open', function(){
-    console.log('connected to mongodb successfully!');
-    jobModel.seedJobs();
+jobsData.connectDB('mongodb://localhost/jobfinder')
+.then(function(){
+	console.log('connect to mongodb');
+	jobModel.seedJobs();
 });
+
 
 //app.listen(process.env.PORT, process.env.IP);
 app.listen(3333);
