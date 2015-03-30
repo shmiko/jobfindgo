@@ -24,18 +24,18 @@ app.get('*', function(req,res){
    res.render('index'); 
 });
 
-var MONGOHQ_URL = 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit';
+var MONGOHQ_URL = 'mongodb://tripstomp:shmikcom@ds031641.mongolab.com:31641/calmapit';
 
 
 //mongoose.connect('mongodb://localhost/jobfinder');
 //mongoose.connect(MONGOHQ_URL);
 
-jobsData.connectDB('mongodb://localhost/jobfinder')
+jobsData.connectDB(MONGOHQ_URL)
 .then(function(){
 	console.log('connect to mongodb');
 	jobModel.seedJobs();
 });
 
 
-app.listen(process.env.PORT, process.env.IP);
-//app.listen(3333);
+//app.listen(process.env.PORT, process.env.IP);
+app.listen(3333);
