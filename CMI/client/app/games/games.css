@@ -1,0 +1,51 @@
+section {
+  font-size: 1.4em;
+    text-align: center;
+    width: 80%;
+     margin-left: 90px; 
+    /*float: right;*/
+}
+
+.header {
+  margin-top: 10px;
+}
+.board {
+  line-height: 30px; 
+  width: 91px; 
+  margin: 15px auto 8px auto;  
+}
+.tile {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0px;
+}
+.choice {
+  cursor: pointer;
+}
+.choices {
+}
+
+
+ul, ol {
+    /* margin-top: 0; */
+    margin-bottom: 10px;
+    width: 100%;
+    /* right: 90px; */
+    /* float: right; */
+    /* padding-left: 160px; */
+    /* padding-right: 90px; */
+    position: absolute;
+    }
+
+li{
+  width:100%;
+}
+
+button{
+  color:#9022cc;
+}
+
+input {
+  color:#000000;
+  background-color: #a8e3f7;
+}
